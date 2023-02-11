@@ -8,7 +8,7 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "eslint . --ext .js,.svelte"
+		"lint": "eslint ."
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
@@ -16,10 +16,6 @@
 		"@typescript-eslint/eslint-plugin": "^5.51.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"eslint": "^8.34.0",
-		"eslint-config-standard-with-typescript": "^34.0.0",
-		"eslint-plugin-import": "^2.27.5",
-		"eslint-plugin-n": "^15.6.1",
-		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
