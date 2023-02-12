@@ -2,9 +2,10 @@
     let counter = 0;
     let number_to_sum: number;
 
-    function sumCounter (number: number = 1) {
+    function sumCounter (number = 1) {
         counter += number;
     }
+
 </script>
 
 <h1>Welcome to SvelteKit</h1>
