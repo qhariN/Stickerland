@@ -14,6 +14,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
+		"@types/dropzone": "^5.7.4",
 		"@typescript-eslint/eslint-plugin": "^5.51.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"autoprefixer": "^10.4.13",
@@ -33,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"dropzone": "^6.0.0-beta.2",
 		"eslint-config-standard": "^17.0.0"
 	}
 }
