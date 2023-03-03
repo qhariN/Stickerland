@@ -10,4 +10,32 @@
     color: #272a42;
     background: radial-gradient(ellipse at right bottom, rgba(220, 219, 145, 0.3) 5%, rgba(220, 181, 145, 0.3) 25%, rgba(220, 145, 146, 0.3) 50%, rgba(219, 145, 220, 0.3) 100%);
   }
+  input[type="file"] {
+    display: none;
+  }
+}
+
+.filepond--root {
+  @apply !rounded-3xl overflow-hidden;
+}
+
+.filepond--hopper {
+  margin-bottom: 0;
+}
+
+.filepond--panel-root {
+  @apply bg-white/70;
+}
+
+.filepond--image-preview-wrapper {
+  @apply !rounded-2xl;
+}
+
+.filepond--panel.filepond--item-panel {
+  @apply !rounded-2xl overflow-hidden;
+}
+
+.filepond--wrapper,
+.filepond--root .filepond--drop-label {
+    min-height: 336px;
 }
