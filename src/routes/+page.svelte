@@ -4,6 +4,7 @@
   import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
   import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size'
   import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type'
+  import * as LottiePlayer from '@lottiefiles/lottie-player'
 
   let root: HTMLInputElement
   let instance: FilePond.FilePond
@@ -51,6 +52,7 @@
   })
 </script>
 
+<lottie-player autoplay loop src="bg.json" speed=".3" intermission="0" class="left-0 right-0 ml-auto mr-auto absolute w-2/3 2xl:w-1/2 -z-10 opacity-50"></lottie-player>
 <div class="min-h-screen flex flex-col">
   <main class="max-w-[400px] mx-auto w-full flex-grow flex items-center">
     <div class="card w-full space-y-8">
