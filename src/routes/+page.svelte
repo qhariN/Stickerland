@@ -4,12 +4,12 @@
   import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
   import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size'
   import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type'
-  import * as LottiePlayer from '@lottiefiles/lottie-player'
 
   let root: HTMLInputElement
   let instance: FilePond.FilePond
 
-  afterUpdate(() => {
+  afterUpdate(async () => {
+    await import('@lottiefiles/lottie-player')
     FilePond.registerPlugin(FilePondPluginImagePreview, FilePondPluginFileValidateSize, FilePondPluginFileValidateType)
     instance = FilePond.create(root, {
       server: {
@@ -50,6 +50,12 @@
     if (!instance) return
     instance.destroy()
   })
+
+  const handleFileUpload = () => {
+    instance.processFile().then((file) => {
+      console.log(file)
+    })
+  }
 </script>
 
 <lottie-player autoplay loop src="bg.json" speed=".3" intermission="0" class="left-0 right-0 ml-auto mr-auto absolute w-2/3 2xl:w-1/2 -z-10 opacity-50"></lottie-player>
@@ -66,7 +72,7 @@
       <div class="filepond--wrapper">
         <input bind:this={root} type="file" name="file" />
       </div>
-      <button on:click={() => instance.processFile()} class="w-full">
+      <button on:click={handleFileUpload} class="w-full">
         Generate
       </button>
     </div>
