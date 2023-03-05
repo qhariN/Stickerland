@@ -37,5 +37,15 @@
 
 .filepond--wrapper,
 .filepond--root .filepond--drop-label {
-    min-height: 336px;
+  min-height: 312px;
+}
+
+.filepond--drop-label {
+  @apply !text-lg !text-gray-700;
+  @apply !rounded-3xl border-dashed border-2 border-[#DB91DC]/50;
+}
+
+.filepond--drop-label,
+.filepond--drop-label label {
+  @apply cursor-pointer;
 }
