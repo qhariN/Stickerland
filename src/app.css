@@ -24,7 +24,7 @@
 }
 
 .filepond--panel-root {
-  @apply bg-white/70;
+  @apply bg-white/50;
 }
 
 .filepond--image-preview-wrapper {
@@ -41,8 +41,8 @@
 }
 
 .filepond--drop-label {
-  @apply !text-lg !text-gray-700;
-  @apply !rounded-3xl border-dashed border-2 border-[#DB91DC]/50;
+  @apply !text-xl !text-gray-700;
+  @apply !rounded-3xl border-dashed border-2 border-[#df8c9a]/50;
 }
 
 .filepond--drop-label,
