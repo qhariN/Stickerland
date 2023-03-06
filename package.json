@@ -16,7 +16,6 @@
 		"@sveltejs/kit": "^1.5.0",
 		"@typescript-eslint/eslint-plugin": "^5.51.0",
 		"@typescript-eslint/parser": "^5.45.0",
-		"@vercel/node": "^2.9.10",
 		"autoprefixer": "^10.4.13",
 		"eslint": "^8.34.0",
 		"eslint-config-standard-with-typescript": "^34.0.0",

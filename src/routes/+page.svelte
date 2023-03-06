@@ -60,6 +60,11 @@
   const handleFileUpload = () => {
     instance.processFile()
   }
+
+  const reset = () => {
+    publicId = undefined
+    status = 'idle'
+  }
 </script>
 
 <div transition:slide class="space-y-8">
@@ -72,33 +77,24 @@
       {#if status !== 'success'}
         <lottie-player autoplay src="check.json" out:fade={{ duration: 300 }} class="absolute left-0 top-0"></lottie-player>
       {:else}
-        <lottie-player in:fade={{ duration: 300 }} autoplay loop src="stars.json" speed=".7" intermission="0" class="absolute left-[-18%] w-[140%] top-0"></lottie-player>
-        <img in:fade={{ duration: 300 }} src={`https://res.cloudinary.com/jhormanrus/image/upload/v1677801678/stickerland/${publicId}`} alt="sticker" />
+        <lottie-player in:fade={{ duration: 300 }} autoplay loop src="stars.json" speed=".7" intermission="0" class="absolute left-[-18%] w-[140%] top-0 pointer-events-none z-10"></lottie-player>
+        <div in:fade={{ duration: 300 }} class="rounded-2xl bg-white/50 p-6 transition-transform hover:scale-105 hover:rotate-3">
+          <img src={`https://res.cloudinary.com/jhormanrus/image/upload/v1677801678/stickerland/${publicId}`} alt="sticker" class="rounded-xl" />
+        </div>
       {/if}
     </div>
   {/if}
   <div class="flex flex-col items-center gap-2">
     {#if !publicId}
-      <button on:click={handleFileUpload} class="w-full">
+      <button on:click={handleFileUpload} class="button w-full">
         Generar
       </button>
+      <a href="/galery">o ver galería de stickers</a>
     {:else}
       <a href="https://wa.me/51935858346?text=sticker-ID%20{publicId}" target="_blank" rel="noopener noreferrer" class="button w-full">
         Compartir
       </a>
+      <button on:click={() => reset()}>o volver a generar otro sticker</button>
     {/if}
-    <a href="/galery">o ver galería de stickers</a>
   </div>
 </div>
-
-<style lang="postcss">
-  button, .button {
-    @apply rounded-2xl px-5 backdrop-blur-md text-white text-xl font-bold;
-    @apply transition-colors duration-200;
-  }
-  button, .button {
-    @apply py-3 flex items-center justify-center;
-    @apply bg-[#df8c9a] hover:bg-[#df8c9a]/90 active:bg-[#df8c9a]/80;
-    @apply disabled:cursor-not-allowed disabled:bg-[#df8c9a]/50;
-  }
-</style>

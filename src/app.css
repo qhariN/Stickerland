@@ -8,10 +8,20 @@
 @layer base {
   body {
     color: #272a42;
-    background: radial-gradient(ellipse at right bottom, rgba(220, 219, 145, 0.3) 5%, rgba(220, 181, 145, 0.3) 25%, rgba(220, 145, 146, 0.3) 50%, rgba(219, 145, 220, 0.3) 100%);
+    background: radial-gradient(ellipse at right bottom, rgba(220, 219, 145, 0.3) 5%, rgba(223, 168, 140, 0.3) 25%, rgba(223, 140, 154, 0.3) 50%, rgba(168, 140, 223, 0.3) 100%);
   }
   input[type="file"] {
     display: none;
+  }
+}
+
+@layer components {
+  .button {
+    @apply rounded-2xl px-5 backdrop-blur-md text-white text-xl font-bold;
+    @apply transition-colors duration-200;
+    @apply py-3 flex items-center justify-center;
+    @apply bg-[#df8c9a] hover:bg-[#df8c9a]/90 active:bg-[#df8c9a]/80;
+    @apply disabled:cursor-not-allowed disabled:bg-[#df8c9a]/50;
   }
 }
 
