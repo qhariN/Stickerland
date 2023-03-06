@@ -24,6 +24,7 @@
   <meta name="twitter:url" content="https://stickerland.vercel.app/" />
   <meta name="twitter:title" content="Stickerland" />
   <meta name="twitter:description" content="Crea y comparte tus propios stickers para WhatsApp" />
+  <meta name="google-site-verification" content="qUjvbSPzhUnPdufHo-s4CYvp8GXwgVtTbpjJrGWLUjc" />
 </svelte:head>
 
 <lottie-player autoplay loop src="bg.json" speed=".3" intermission="0" class="absolute right-24 sm:left-0 sm:right-0 top-0 bottom-0 ml-auto mr-auto mt-0 mb-0 w-[200%] sm:w-full lg:w-11/12 2xl:w-1/2 -z-10 opacity-50"></lottie-player>

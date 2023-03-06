@@ -20,5 +20,6 @@
         </a>
       {/each}
     </div>
+    <a href="/" class="button sticky bottom-8 mt-4">Generar nuevo sticker</a>
   {/await}
 </div>

@@ -28,7 +28,7 @@
     @apply rounded-2xl px-5 backdrop-blur-md text-white text-xl font-bold;
     @apply transition-colors duration-200;
     @apply py-3 flex items-center justify-center;
-    @apply bg-[#df8c9a] hover:bg-[#df8c9a]/90 active:bg-[#df8c9a]/80;
+    @apply bg-[#df8c9a]/90 hover:bg-[#df8c9a] active:bg-[#df8c9a]/80;
     @apply disabled:cursor-not-allowed disabled:bg-[#df8c9a]/50;
   }
 }
