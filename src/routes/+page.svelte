@@ -97,7 +97,7 @@
       <a href="/galery">o ver galería de stickers</a>
     {:else}
       <a href="https://wa.me/51935858346?text=sticker-ID%20{publicId}" target="_blank" rel="noopener noreferrer" class="button w-full">
-        Compartir
+        Obtener sticker
       </a>
       <button on:click={() => reset()}>o volver a generar otro sticker</button>
     {/if}
