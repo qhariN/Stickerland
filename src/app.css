@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 @import 'filepond/dist/filepond.min.css';
 @import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 
@@ -6,8 +7,15 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  html {
+    scroll-behavior: smooth;
     color: #272a42;
+  }
+  html,
+  .filepond--root {
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
     background: radial-gradient(ellipse at right bottom, rgba(220, 219, 145, 0.3) 5%, rgba(223, 168, 140, 0.3) 25%, rgba(223, 140, 154, 0.3) 50%, rgba(168, 140, 223, 0.3) 100%);
   }
   input[type="file"] {

@@ -45,9 +45,10 @@
       imagePreviewHeight: 280,
       acceptedFileTypes: ['image/png', 'image/jpeg', 'image/gif', 'image/webp'],
       labelIdle: 'Arrastrar y soltar<br>imagen o <span class="filepond--label-action">explorar</span>',
-      labelMaxFileSizeExceeded: 'El archivo es muy grande',
       labelMaxFileSize: 'Tamaño máximo del archivo es {filesize}',
+      labelFileProcessing: 'Subiendo',
       labelFileTypeNotAllowed: 'Imagen no permitida',
+      labelMaxFileSizeExceeded: 'El archivo es muy grande',
       fileValidateTypeLabelExpectedTypes: 'Solo se permiten .png, .jpeg, .gif, .svg, .webp'
     })
   })
@@ -58,7 +59,11 @@
   })
 
   const handleFileUpload = () => {
-    instance.processFile()
+    if (instance.getFile()) {
+      instance.processFile()
+    } else {
+      instance.browse()
+    }
   }
 
   const reset = () => {
@@ -78,7 +83,7 @@
         <lottie-player autoplay src="check.json" out:fade={{ duration: 300 }} class="absolute left-0 top-0"></lottie-player>
       {:else}
         <lottie-player in:fade={{ duration: 300 }} autoplay loop src="stars.json" speed=".7" intermission="0" class="absolute left-[-18%] w-[140%] top-0 pointer-events-none z-10"></lottie-player>
-        <div in:fade={{ duration: 300 }} class="rounded-2xl bg-white/50 p-6 transition-transform hover:scale-105 hover:rotate-3">
+        <div in:fade={{ duration: 300 }} class="rounded-2xl bg-white/50 p-6 transition-transform hover:scale-105 hover:rotate-3 shadow-sm">
           <img src={`https://res.cloudinary.com/jhormanrus/image/upload/v1677801678/stickerland/${publicId}`} alt="sticker" class="rounded-xl" />
         </div>
       {/if}
