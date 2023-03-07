@@ -44,7 +44,7 @@
       maxFileSize: '10MB',
       imagePreviewHeight: 280,
       acceptedFileTypes: ['image/png', 'image/jpeg', 'image/gif', 'image/webp'],
-      labelIdle: 'Arrastrar y soltar<br>imagen o <span class="filepond--label-action">explorar</span>',
+      labelIdle: 'Arrastrar y soltar<br>imagen o <strong style="font-weight: 600">explorar</strong>',
       labelMaxFileSize: 'Tamaño máximo del archivo es {filesize}',
       labelFileProcessing: 'Subiendo',
       labelFileTypeNotAllowed: 'Imagen no permitida',
@@ -94,12 +94,12 @@
       <button on:click={handleFileUpload} class="button w-full">
         Generar
       </button>
-      <a href="/galery">o ver galería de stickers</a>
+      <a href="/galery">o ver <span class="font-semibold">galería de stickers</span></a>
     {:else}
       <a href="https://wa.me/51935858346?text=sticker-ID%20{publicId}" target="_blank" rel="noopener noreferrer" class="button w-full">
         Obtener sticker
       </a>
-      <button on:click={() => reset()}>o volver a generar otro sticker</button>
+      <button on:click={() => reset()}>o volver a <span class="font-semibold">generar otro sticker</span></button>
     {/if}
   </div>
 </div>
