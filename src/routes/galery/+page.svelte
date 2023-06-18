@@ -3,7 +3,7 @@
   import type { Asset } from '../../interfaces/asset'
 
   const fetchAssets = async (): Promise<Asset[]> => {
-    const response = await fetch('https://stickerland-api.vercel.app/api/asset')
+    const response = await fetch('/api/asset')
     const data = await response.json()
     return data
   }
