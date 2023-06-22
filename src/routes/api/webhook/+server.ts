@@ -10,7 +10,7 @@ export function GET ({ url }): Response {
   const verifyToken = url.searchParams.get('hub.verify_token')
 
   if (mode === 'subscribe' && verifyToken === token) {
-    return json(challenge)
+    return new Response(challenge)
   }
   throw error(403, 'Forbidden')
 }
