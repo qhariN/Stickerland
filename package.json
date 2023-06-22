@@ -34,8 +34,6 @@
 	"type": "module",
 	"dependencies": {
 		"@lottiefiles/lottie-player": "^1.7.1",
-		"@sveltejs/adapter-vercel": "^3.0.1",
-		"@vercel/node": "^2.15.1",
 		"eslint-config-standard": "^17.0.0",
 		"filepond": "^4.30.4",
 		"filepond-plugin-file-validate-size": "^2.2.8",

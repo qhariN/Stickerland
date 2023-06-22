@@ -94,7 +94,7 @@
       <button on:click={handleFileUpload} class="button w-full">
         Generar
       </button>
-      <a href="/galery">o ver <span class="font-semibold">galería de stickers</span></a>
+      <a href="/gallery">o ver <span class="font-semibold">galería de stickers</span></a>
     {:else}
       <a href="https://wa.me/51935858346?text=sticker-ID%20{publicId}" target="_blank" rel="noopener noreferrer" class="button w-full">
         Obtener sticker
