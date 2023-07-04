@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit'
 
-const apiKey = process.env.CLOUDINARY_API_KEY ?? ''
-const apiSecret = process.env.CLOUDINARY_API_SECRET ?? ''
+const apiKey: string = process.env.CLOUDINARY_API_KEY ?? ''
+const apiSecret: string = process.env.CLOUDINARY_API_SECRET ?? ''
 
 export async function GET (): Promise<Response> {
   const endpoint = 'https://api.cloudinary.com/v1_1/jhormanrus/resources/image/upload?prefix=stickerland&max_results=1000'
@@ -26,10 +26,5 @@ export async function GET (): Promise<Response> {
       console.error(err)
     })
 
-  // return new Response(JSON.stringify(assets), {
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   }
-  // })
   return json(assets)
 }

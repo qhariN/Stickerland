@@ -3,7 +3,7 @@ import type { Webhook } from '../../../interfaces/message'
 import { error, json } from '@sveltejs/kit'
 import wretch from 'wretch'
 
-const token = process.env.WA_TOKEN ?? ''
+const token: string = process.env.WA_TOKEN ?? ''
 
 export function GET ({ url }): Response {
   const mode = url.searchParams.get('hub.mode')
@@ -72,9 +72,7 @@ o puedes seleccionar uno de los stickers disponibles en https://stickerland.verc
 
   const stickerId = text.split(' ')[1]
 
-  const { status } = await wretch(`https://res.cloudinary.com/jhormanrus/image/upload/v1677629788/stickerland/${stickerId}`).head().res()
-
-  if (status !== 200) {
+  await wretch(`https://res.cloudinary.com/jhormanrus/image/upload/v1677629788/stickerland/${stickerId}`).head().notFound(async () => {
     await api.post({
       messaging_product: 'whatsapp',
       recipient_type: 'individual',
@@ -86,7 +84,7 @@ o puedes seleccionar uno de los stickers disponibles en https://stickerland.verc
     }).res()
 
     return json({ message: 'ok' })
-  }
+  }).res()
 
   await api.post({
     messaging_product: 'whatsapp',
