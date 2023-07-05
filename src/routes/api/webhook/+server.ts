@@ -72,7 +72,9 @@ o puedes seleccionar uno de los stickers disponibles en https://stickerland.verc
 
   const stickerId = text.split(' ')[1]
 
-  await wretch(`https://res.cloudinary.com/jhormanrus/image/upload/v1677629788/stickerland/${stickerId}`).head().notFound(async () => {
+  const { status } = await fetch(`https://res.cloudinary.com/jhormanrus/image/upload/v1677629788/stickerland/${stickerId}`, { method: 'HEAD' })
+
+  if (status !== 200) {
     await api.post({
       messaging_product: 'whatsapp',
       recipient_type: 'individual',
@@ -84,7 +86,7 @@ o puedes seleccionar uno de los stickers disponibles en https://stickerland.verc
     }).res()
 
     return json({ message: 'ok' })
-  }).res()
+  }
 
   await api.post({
     messaging_product: 'whatsapp',
